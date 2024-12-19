@@ -1,3 +1,4 @@
+import 'package:firstcabs/Screens/map_page.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatefulWidget {
@@ -204,21 +205,32 @@ class _LandingPageState extends State<LandingPage> {
 
         // Destination List
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: destinations.map((destination) => Column(
-                      children: [
-                        DestinationItem(
-                          title: destination,
-                          icon: Icons.location_pin,
-                        ),
-                        const SizedBox(height: 12),
-                      ],
-                    ))
-                .toList(),
-          ),
+  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: destinations.map((destination) {
+      return GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MapPage(startPoint:'Delhi Technological University',endPoint: destination),
+            ),
+          );
+        },
+        child: Column(
+          children: [
+            DestinationItem(
+              title: destination,
+              icon: Icons.location_pin,
+            ),
+            const SizedBox(height: 12),
+          ],
         ),
+      );
+    }).toList(),
+  ),
+),
       ],
       ),
         ],
