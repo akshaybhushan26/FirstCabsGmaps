@@ -74,7 +74,7 @@ class _MapPageState extends State<MapPage> {
     // Fetch the route using Directions API or Polyline Points package
     PolylinePoints polylinePoints = PolylinePoints();
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-      'YOUR_GOOGLE_API_KEY',
+      'AIzaSyB8ktFpX6ItlkEAIXk_EPEAiLD_bS0OjFs',
       PointLatLng(start.latitude, start.longitude),
       PointLatLng(end.latitude, end.longitude),
     );

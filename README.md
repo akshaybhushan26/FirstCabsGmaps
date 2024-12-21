@@ -1,6 +1,6 @@
 # firstcabs
 
-A new Flutter project.
+Integrating Google Maps
 
 ## Getting Started
 
